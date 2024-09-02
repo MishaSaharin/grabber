@@ -1,0 +1,49 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: postgres
+      dbms: postgres
+      changes:
+        - createTable:
+            tableName: posts
+            schemaName: post
+            columns:
+              - column:
+                  name: id
+                  type: UUID
+                  autoIncrement: false
+                  constraints:
+                    primaryKey: true
+                    unique: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: TEXT
+                  defaultValue: 'undefined'
+                  constraints:
+                    nullable: false
+              - column:
+                  name: text
+                  type: TEXT
+                  defaultValue: 'undefined'
+              - column:
+                  name: link
+                  type: TEXT
+                  defaultValue: 'undefined'
+                  constraints:
+                    nullable: false
+              - column:
+                  name: created
+                  type: TIMESTAMP
+                  defaultValue: 'undefined'
+                  constraints:
+                    nullable: false
+#
+#create table if not exists post
+#(
+#    id      uuid PRIMARY KEY,
+#    name    VARCHAR(128),
+#    text    TEXT,
+#    link    VARCHAR(256) UNIQUE,
+#    created TIMESTAMP
+#);

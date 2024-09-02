@@ -1,0 +1,1 @@
+CREATE DATABASE postgres WITH OWNER postgres;
